@@ -1,8 +1,8 @@
 import React from 'react';
-
+import classes from "./Profile.module.css";
 const Profile = () => {
     return (
-        <div className="ProfilePage">
+        <div className={classes.ProfilePage}>
             <div>
                 <img src="https://telecomdom.com/wp-content/uploads/2019/12/shapka_for_youtube-fon-6-2048x1152.jpg"
                      alt="" width="1440px" height="200px"/>

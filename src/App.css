@@ -12,15 +12,4 @@
 
 }
 
-.header {
-  grid-area: header;
-  background-color: #fda681;
-}
-.nav {
-  grid-area: nav;
-  background-color: #fda681;
-}
-.ProfilePage {
-  grid-area: ProfilePage;
-  background-color: #B4DFE5;
-}
+
