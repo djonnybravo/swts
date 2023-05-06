@@ -1,15 +1,18 @@
-import React, {useState} from 'react';
+import React from 'react';
 import classes from "./MyPosts.module.css";
+import Post from "./Post/Post";
 
 const MyPosts = () => {
 
     return (
         <div>
             My posts
-            <div>new post</div>
+            <div>
+                <textarea name="" id="" cols={100} rows={5}></textarea>
+                <button>Add post</button>
+            </div>
             <div className={classes.posts}>
-                <div className={classes.postItem}>post1</div>
-                <div className={classes.postItem}>post2</div>
+                <Post/>
             </div>
         </div>
     );
