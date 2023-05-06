@@ -12,8 +12,9 @@ const MyPosts = () => {
                 <button>Add post</button>
             </div>
             <div className={classes.posts}>
-                <Post/>
-                <Post/>
+                <Post name={"Petya"} message={'Привет привет'}/>
+                <Post name={"Dima"} message={'Привет привет'}/>
+                <Post name={"Petya"} message={'Как делат'}/>
             </div>
         </div>
     );
