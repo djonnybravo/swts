@@ -13,6 +13,7 @@ const MyPosts = () => {
             </div>
             <div className={classes.posts}>
                 <Post/>
+                <Post/>
             </div>
         </div>
     );
