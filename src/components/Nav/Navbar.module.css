@@ -3,3 +3,11 @@
     grid-area: nav;
     background-color: #fda681;
 }
+.item a {
+    color: white;
+    text-decoration: none;
+}
+
+.item.active {
+    color: darkred;
+}
