@@ -8,10 +8,12 @@ import Dialogs from "./components/Dialogs/Dialogs";
 function App() {
     return (
         <div className="app-wrapper">
-            <Header />
-            <Navbar />
-            {/*<Profile />*/}
-            <Dialogs />
+            <Header/>
+            <Navbar/>
+            <div className={"content"}>
+                {/*<Profile />*/}
+                <Dialogs/>
+            </div>
         </div>
     );
 }
