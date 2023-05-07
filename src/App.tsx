@@ -2,8 +2,9 @@ import React from 'react';
 import './App.css';
 import Header from "./components/Header/Header";
 import Navbar from "./components/Nav/Navbar";
-
 import Dialogs from "./components/Dialogs/Dialogs";
+import {Route} from "react-router-dom";
+import Profile from './components/Profile/Profile';
 
 
 function App() {
@@ -12,9 +13,9 @@ function App() {
             <Header/>
             <Navbar/>
             <div className={"content"}>
-                 {/*<Profile />*/}
-                <Dialogs/>
 
+                <Route component={Profile}></Route>
+                <Route component={Dialogs}></Route>
             </div>
         </div>
     );
