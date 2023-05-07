@@ -4,8 +4,6 @@ import Header from "./components/Header/Header";
 import Navbar from "./components/Nav/Navbar";
 import Profile from "./components/Profile/Profile";
 import Dialogs from "./components/Dialogs/Dialogs";
-import {Route} from "react-router-dom";
-
 
 function App() {
     return (
@@ -13,10 +11,8 @@ function App() {
             <Header/>
             <Navbar/>
             <div className={"content"}>
-
-                <Route component={Profile}></Route>
-                <Route component={Dialogs}></Route>
-
+                 {/*<Profile />*/}
+                <Dialogs/>
             </div>
         </div>
     );
