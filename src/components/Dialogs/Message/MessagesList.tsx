@@ -1,11 +1,11 @@
 import React from 'react';
 
-const Dialogs = () => {
+const MessagesList = () => {
     return (
         <div>
-            Dialogs
+            MeesageList
         </div>
     );
 };
 
-export default Dialogs;
+export default MessagesList;
