@@ -7,9 +7,15 @@
   grid-gap: 15px;
   grid-template-areas:
   "header header"
-  "nav ProfilePage ";
+  "nav content ";
   padding: 20px;
 
+}
+
+
+.content {
+  background-color: #B4DFE5;
+  grid-area: content;
 }
 
 
