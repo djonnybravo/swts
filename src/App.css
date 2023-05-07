@@ -1,21 +1,21 @@
 .app-wrapper {
-  background-color: #FBE8A6;
-  color: #303C7C;
-  display: grid;
-  grid-template-rows: 60px 1fr ;
-  grid-template-columns: 2fr 10fr;
-  grid-gap: 15px;
-  grid-template-areas:
+    background-color: #FBE8A6;
+    color: #303C7C;
+    display: grid;
+    grid-template-rows: 60px 1fr;
+    grid-template-columns: 2fr 10fr;
+    grid-gap: 15px;
+    grid-template-areas:
   "header header"
   "nav content ";
-  padding: 20px;
+    padding: 20px;
 
 }
 
 
 .content {
-  background-color: #B4DFE5;
-  grid-area: content;
+    background-color: #B4DFE5;
+    grid-area: content;
 }
 
 
