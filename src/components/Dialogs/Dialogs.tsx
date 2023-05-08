@@ -1,7 +1,8 @@
 import React from 'react';
 import classes from "./Dialogs.module.css";
 import DialogItem from "./Dialog/DialogItem";
-import MessagesList from "./Message/MessagesList";
+import Message from "./Message/Message";
+
 
 const Dialogs = () => {
     return (
@@ -13,8 +14,12 @@ const Dialogs = () => {
                 <DialogItem name={"Petya"} path={1}/>
                 <DialogItem name={"Petya"} path={1}/>
             </div>
+            <div className={classes.dialog__messages}>
+               <Message messageText={"WOW"}/>
+               <Message messageText={"AUF"}/>
+               <Message messageText={"RESPECT"}/>
+            </div>
 
-            <MessagesList/>
         </div>
     );
 };
