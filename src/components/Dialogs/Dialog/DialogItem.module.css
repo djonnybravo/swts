@@ -1,0 +1,7 @@
+.dialogs__items {
+    padding: 10px;
+}
+.dialog{}
+.active {
+    font-weight: bold;
+}

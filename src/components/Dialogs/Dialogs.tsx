@@ -1,21 +1,20 @@
 import React from 'react';
 import classes from "./Dialogs.module.css";
-import {callbackify} from "util";
+import DialogItem from "./Dialog/DialogItem";
+import MessagesList from "./Message/MessagesList";
 
 const Dialogs = () => {
     return (
         <div className={classes.dialogsPage}>
-            <div className={classes.dialogs__items}>
-                <div className={classes.dialog}> Dimych</div>
-                <div className={classes.dialog}> Petya</div>
-                <div className={classes.dialog + " " + classes.active}> Djon</div>
-                <div className={classes.dialog}> Ivan</div>
-                <div className={classes.dialog}> UserN</div>
+            <div className={classes.dialogs__items }>
+                <DialogItem name={"Petya"} path={1}/>
+                <DialogItem name={"Petya"} path={1}/>
+                <DialogItem name={"Petya"} path={1}/>
+                <DialogItem name={"Petya"} path={1}/>
+                <DialogItem name={"Petya"} path={1}/>
             </div>
-            <div className={classes.dialog__messages}>
-                <div className={classes.message}>Hellloooo</div>
-                <div className={classes.message}>Hellloooo</div>
-            </div>
+
+            <MessagesList/>
         </div>
     );
 };
