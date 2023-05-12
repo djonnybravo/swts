@@ -11,6 +11,13 @@ import SettingsPage from "./components/Settings/SettingsPage";
 
 
 function App() {
+
+
+
+
+
+
+
     return (
         <BrowserRouter>
             <div className="app-wrapper">

@@ -5,13 +5,13 @@ import {NavLink} from "react-router-dom";
 
 type propsType = {
     name: string
-    path: number
+    id: number
 }
 
 const DialogItem = (props:propsType) => {
     return (
             <div className={classes.dialog + " " + classes.active}>
-                <NavLink to={'/dialogs/' + props.path}>{props.name}</NavLink>
+                <NavLink to={'/dialogs/'}>{props.name}</NavLink>
             </div>
 
     );
