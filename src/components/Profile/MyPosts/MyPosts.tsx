@@ -1,18 +1,9 @@
 import React from 'react';
 import classes from "./MyPosts.module.css";
 import Post from "./Post/Post";
-import {PostType, ProfilePagePropsType} from "../Profile";
+import { ProfilePageType} from "../../../redux/state";
 
-
-type MyPostsType = {
-    posts: PostType[]
-}
-
-
-const MyPosts = (props:MyPostsType) => {
-
-
-
+const MyPosts = (props:ProfilePageType) => {
 
     return (
         <div>
@@ -22,7 +13,7 @@ const MyPosts = (props:MyPostsType) => {
                 <button>Add post</button>
             </div>
             <div className={classes.posts}>
-                {props.posts.map(post => <Post message={post.message} likesCount={post.likesCount}/>)}
+                {props.posts.map(post => <Post id={post.id} message={post.message} likes={post.likes}/>)}
 
             </div>
         </div>
