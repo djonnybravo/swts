@@ -1,15 +1,18 @@
 import React from 'react';
 import classes from "./MyPosts.module.css";
 import Post from "./Post/Post";
+import {PostType, ProfilePagePropsType} from "../Profile";
 
-const MyPosts = () => {
 
-    let postsData = [
-        {id: 1, message: "Привет привет", likesCount: 12 },
-        {id: 2, message: "Привет привет", likesCount: 12 },
-        {id: 3, message: "Привет привет", likesCount: 12 }
+type MyPostsType = {
+    posts: PostType[]
+}
 
-    ]
+
+const MyPosts = (props:MyPostsType) => {
+
+
+
 
     return (
         <div>
@@ -19,7 +22,7 @@ const MyPosts = () => {
                 <button>Add post</button>
             </div>
             <div className={classes.posts}>
-                {postsData.map(post => <Post message={post.message} likesCount={post.likesCount}/>)}
+                {props.posts.map(post => <Post message={post.message} likesCount={post.likesCount}/>)}
 
             </div>
         </div>
