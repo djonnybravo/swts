@@ -13,22 +13,18 @@ import SettingsPage from "./components/Settings/SettingsPage";
 function App() {
 
 
-
-
-
-
-
     return (
         <BrowserRouter>
             <div className="app-wrapper">
                 <Header/>
                 <Navbar/>
                 <div className={"content"}>
-                    <Route path={"/profile"} component={Profile}></Route>
-                    <Route path={"/dialogs"} component={Dialogs}></Route>
-                    <Route path={"/music"} component={MusicPage}></Route>
-                    <Route path={"/news"} component={NewsPage}></Route>
-                    <Route path={"/settings"} component={SettingsPage}></Route>
+                    <Route path={"/profile"} render={() => <Profile/>}></Route>
+                    <Route path={"/dialogs"} render={() => <Dialogs/>}></Route>
+
+                    <Route path={"/music"} render={() => <MusicPage/>}></Route>
+                    <Route path={"/news"} render={() => <NewsPage/>}></Route>
+                    <Route path={"/settings"} render={() => <SettingsPage/>}></Route>
                 </div>
             </div>
         </BrowserRouter>

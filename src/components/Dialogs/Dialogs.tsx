@@ -1,8 +1,8 @@
 import React from 'react';
 import classes from "./Dialogs.module.css";
-import DialogItem from "./Dialog/DialogItem";
+import DialogItem from "./DialogItem/DialogItem";
 import Message from "./Message/Message";
-import dialogItem from "./Dialog/DialogItem";
+import dialogItem from "./DialogItem/DialogItem";
 
 
 const Dialogs = () => {
