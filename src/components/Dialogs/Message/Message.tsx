@@ -1,15 +1,14 @@
 import React from 'react';
 import classes from "./Message.module.css";
+import {MessageType} from "../../../redux/state";
 
-type messagePropsType = {
-    messageText: string
-}
 
-const Message = (props:messagePropsType) => {
+
+const Message = (props:MessageType) => {
     return (
 
             <div className={classes.message}>
-                {props.messageText}
+                {props.message}
             </div>
 
 
