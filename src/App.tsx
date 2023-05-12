@@ -8,29 +8,12 @@ import Dialogs from "./components/Dialogs/Dialogs";
 import MusicPage from "./components/Music/MusicPage";
 import NewsPage from "./components/News/NewsPage";
 import SettingsPage from "./components/Settings/SettingsPage";
+import {state} from "./redux/state";
+
 
 
 function App() {
-    let dialogsData = [
-        {id: 1, name: "Petya"},
-        {id: 2, name: "Dima"},
-        {id: 3, name: "Sasha"},
-        {id: 4, name: "jenya"},
-        {id: 5, name: "Alex"},
-        {id: 6, name: "User"}
-    ]
-    let messagesData = [
-        {id: 1, messageText: "mm"},
-        {id: 2, messageText: "mm"},
-        {id: 3, messageText: "mm"},
-        {id: 4, messageText: "mm"},
-    ]
-    let postsData = [
-        {id: 1, message: "Привет привет", likesCount: 12 },
-        {id: 2, message: "Привет привет", likesCount: 12 },
-        {id: 3, message: "Привет привет", likesCount: 12 }
 
-    ]
 
     return (
         <BrowserRouter>
@@ -38,8 +21,8 @@ function App() {
                 <Header/>
                 <Navbar/>
                 <div className={"content"}>
-                    <Route path={"/profile"} render={() => <Profile posts={postsData}/>}></Route>
-                    <Route path={"/dialogs"} render={() => <Dialogs dialogs={dialogsData} messages={messagesData}/>}></Route>
+                    <Route path={"/profile"} render={() => <Profile posts={state.profilePage.posts}/>}></Route>
+                    <Route path={"/dialogs"} render={() => <Dialogs dialogs={state.dialogsPage.dialogs} messages={state.dialogsPage.messages}/>}></Route>
 
                     <Route path={"/music"} render={() => <MusicPage/>}></Route>
                     <Route path={"/news"} render={() => <NewsPage/>}></Route>
