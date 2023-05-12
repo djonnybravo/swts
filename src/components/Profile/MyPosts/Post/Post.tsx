@@ -1,12 +1,9 @@
 import React from 'react';
 import classes from "./Post.module.css";
+import {PostsType} from "../../../../redux/state";
 
-type PostPropsType = {
 
-    message: string
-    likesCount: number
-}
-const Post = (props:PostPropsType) => {
+const Post = (props:PostsType) => {
     return (
         <div className={classes.item}>
             <img
@@ -17,7 +14,7 @@ const Post = (props:PostPropsType) => {
             </div>
 
             <div>
-                <span>like {props.likesCount}</span>
+                <span>like {props.likes}</span>
             </div>
 
 
