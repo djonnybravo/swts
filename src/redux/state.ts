@@ -53,5 +53,4 @@ export const state: RootStateType = {
         ]
     },
 
-
 }
