@@ -52,5 +52,14 @@ export const state: RootStateType = {
             {id: 4, message: "YO"},
         ]
     },
-
 }
+
+export const addPost = (postMessage:string) => {
+    let newPost:PostsType = {
+        id: new Date().getTime(),
+        message: postMessage,
+        likes: 5,
+    }
+    state.profilePage.posts.push(newPost)
+}
+
