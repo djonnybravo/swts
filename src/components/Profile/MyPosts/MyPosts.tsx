@@ -2,14 +2,18 @@ import React from 'react';
 import classes from "./MyPosts.module.css";
 import Post from "./Post/Post";
 import { ProfilePageType} from "../../../redux/state";
+import {ProfilePropsType} from "../Profile";
 
-const MyPosts = (props:ProfilePageType) => {
-
+const MyPosts = (props:ProfilePropsType) => {
+    let newPostElement = React.createRef<HTMLTextAreaElement>()
     let addPost = () => {
+        if (newPostElement.current) {
+            props.addPost(newPostElement.current.value)
 
+        }
     }
 
-    let newPostElement = React.createRef<HTMLTextAreaElement>()
+
 
     return (
         <div>
