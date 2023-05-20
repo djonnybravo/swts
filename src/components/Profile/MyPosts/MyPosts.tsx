@@ -1,4 +1,4 @@
-import React from 'react';
+import React, {ChangeEvent} from 'react';
 import classes from "./MyPosts.module.css";
 import Post from "./Post/Post";
 import { ProfilePageType} from "../../../redux/state";
@@ -12,7 +12,9 @@ const MyPosts = (props:ProfilePropsType) => {
         }
 
     }
+    const onPostTextChange = (e:ChangeEvent<HTMLTextAreaElement>) => {
 
+    }
 
 
     return (
@@ -25,6 +27,8 @@ const MyPosts = (props:ProfilePropsType) => {
                     cols={100}
                     rows={5}
                     ref={newPostElement}
+                    onChange={onPostTextChange}
+                    value={props.newPostText}
                 >
 
                 </textarea>

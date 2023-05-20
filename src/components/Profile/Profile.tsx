@@ -7,6 +7,7 @@ import {addPost, PostsType, ProfilePageType} from "../../redux/state";
 
 export type ProfilePropsType = {
     posts: PostsType[]
+    newPostText: string
     addPost: (newPost: string) => void
 }
 

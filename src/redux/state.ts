@@ -15,6 +15,7 @@ export type MessageType = {
 }
 export type ProfilePageType = {
     posts: Array<PostsType>,
+    newPostText: string,
 
 }
 export type DialogsPageType = {
@@ -36,6 +37,7 @@ export const state: RootStateType = {
             {id: 3, message: "I am good too, thanks", likes: 10},
             {id: 4, message: "This is great", likes: 10},
         ],
+        newPostText: ""
 
     },
     dialogsPage: {
