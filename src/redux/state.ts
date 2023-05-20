@@ -65,6 +65,7 @@ export const addPost = (postMessage: string) => {
         likes: 5,
     }
     state.profilePage.posts.push(newPost)
+    state.profilePage.newPostText = ""
     rerenderEntireTree(state)
 }
 
