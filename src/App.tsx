@@ -8,7 +8,7 @@ import Dialogs from "./components/Dialogs/Dialogs";
 import MusicPage from "./components/Music/MusicPage";
 import NewsPage from "./components/News/NewsPage";
 import SettingsPage from "./components/Settings/SettingsPage";
-import {addPost, state, updateNewPostText} from "./redux/state";
+import {addNewMessage, addPost, state, updateMessageText, updateNewPostText} from "./redux/state";
 
 
 
@@ -29,7 +29,14 @@ function App() {
                                    newPostText={state.profilePage.newPostText}
                                    updateNewPostText={updateNewPostText}
                                />}></Route>
-                    <Route path={"/dialogs"} render={() => <Dialogs dialogs={state.dialogsPage.dialogs} messages={state.dialogsPage.messages}/>}></Route>
+                    <Route path={"/dialogs"} render={() =>
+                        <Dialogs
+                            dialogs={state.dialogsPage.dialogs}
+                            messages={state.dialogsPage.messages}
+                            newMessageText={state.dialogsPage.newMessageText}
+                            updateMessageText={updateMessageText}
+                            addNewMessage={addNewMessage}
+                        />}></Route>
 
                     <Route path={"/music"} render={() => <MusicPage/>}></Route>
                     <Route path={"/news"} render={() => <NewsPage/>}></Route>
