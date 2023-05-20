@@ -5,14 +5,12 @@ import { ProfilePageType} from "../../../redux/state";
 import {ProfilePropsType} from "../Profile";
 
 const MyPosts = (props:ProfilePropsType) => {
-    let newPostElement = React.createRef<HTMLTextAreaElement>()
-    let addPost = () => {
-        if (newPostElement.current) {
-            props.addPost(newPostElement.current.value)
+    //let newPostElement = React.createRef<HTMLTextAreaElement>()
+    let addPost = () => props.addPost()
 
-        }
 
-    }
+
+
     const onPostTextChange = (e:ChangeEvent<HTMLTextAreaElement>) => {
             props.updateNewPostText(e.currentTarget?.value)
     }
@@ -27,7 +25,7 @@ const MyPosts = (props:ProfilePropsType) => {
                     id=""
                     cols={100}
                     rows={5}
-                    ref={newPostElement}
+                    // ref={newPostElement}
                     onChange={onPostTextChange}
                     value={props.newPostText}
                 >

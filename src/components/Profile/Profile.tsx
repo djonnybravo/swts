@@ -8,7 +8,7 @@ import {addPost, PostsType, ProfilePageType, updateNewPostText} from "../../redu
 export type ProfilePropsType = {
     posts: PostsType[]
     newPostText: string
-    addPost: (newPost: string) => void
+    addPost: () => void
     updateNewPostText: (newText: string) => void
 }
 
