@@ -58,8 +58,8 @@ export const state: RootStateType = {
     },
 }
 
-export const addPost = (postMessage:string) => {
-    let newPost:PostsType = {
+export const addPost = (postMessage: string) => {
+    let newPost: PostsType = {
         id: new Date().getTime(),
         message: postMessage,
         likes: 5,
@@ -68,3 +68,7 @@ export const addPost = (postMessage:string) => {
     rerenderEntireTree(state)
 }
 
+export const updateNewPostText = (newPosttext: string) => {
+    state.profilePage.newPostText = newPosttext
+    rerenderEntireTree(state)
+}

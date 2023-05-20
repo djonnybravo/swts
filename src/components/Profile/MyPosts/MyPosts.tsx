@@ -13,7 +13,7 @@ const MyPosts = (props:ProfilePropsType) => {
 
     }
     const onPostTextChange = (e:ChangeEvent<HTMLTextAreaElement>) => {
-
+            props.updateNewPostText(e.currentTarget?.value)
     }
 
 
