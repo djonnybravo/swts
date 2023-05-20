@@ -9,7 +9,7 @@ const MyPosts = (props:ProfilePropsType) => {
     let addPost = () => {
         if (newPostElement.current) {
             props.addPost(newPostElement.current.value)
-            props.updateNewPostText('')
+
         }
 
     }
