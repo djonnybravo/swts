@@ -8,12 +8,14 @@ import Dialogs from "./components/Dialogs/Dialogs";
 import MusicPage from "./components/Music/MusicPage";
 import NewsPage from "./components/News/NewsPage";
 import SettingsPage from "./components/Settings/SettingsPage";
-import {store} from "./redux/store";
+import {StoreType} from "./redux/store";
 
 
+type AppPropsTye = {
+    store: StoreType
+}
 
-
-function App() {
+function App(props: AppPropsTye) {
 
 
     return (
@@ -25,18 +27,18 @@ function App() {
                     <Route path={"/profile"}
                            render={() =>
                                <Profile
-                                   posts={store._state.profilePage.posts}
-                                   addPost={store.addPost.bind(store)}
-                                   newPostText={store._state.profilePage.newPostText}
-                                   updateNewPostText={store.updateNewPostText.bind(store)}
+                                   posts={props.store._state.profilePage.posts}
+                                   addPost={props.store.addPost.bind(props.store)}
+                                   newPostText={props.store._state.profilePage.newPostText}
+                                   updateNewPostText={props.store.updateNewPostText.bind(props.store)}
                                />}></Route>
                     <Route path={"/dialogs"} render={() =>
                         <Dialogs
-                            dialogs={store._state.dialogsPage.dialogs}
-                            messages={store._state.dialogsPage.messages}
-                            newMessageText={store._state.dialogsPage.newMessageText}
-                            updateMessageText={store.updateMessageText.bind(store)}
-                            addNewMessage={store.addNewMessage.bind(store)}
+                            dialogs={props.store._state.dialogsPage.dialogs}
+                            messages={props.store._state.dialogsPage.messages}
+                            newMessageText={props.store._state.dialogsPage.newMessageText}
+                            updateMessageText={props.store.updateMessageText.bind(props.store)}
+                            addNewMessage={props.store.addNewMessage.bind(props.store)}
                         />}></Route>
 
                     <Route path={"/music"} render={() => <MusicPage/>}></Route>

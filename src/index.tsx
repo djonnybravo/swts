@@ -9,7 +9,7 @@ import {store} from "./redux/store";
 
 let rerenderEntireTree = () => {
     ReactDOM.render(
-        <App />,
+        <App store={store} />,
         document.getElementById('root')
     );
 }
