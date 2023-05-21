@@ -1,5 +1,3 @@
-
-
 export type PostsType = {
     id: number
     message: string
@@ -100,3 +98,4 @@ export const subscribe = (observer: () => void) => {
 let rerenderEntireTree = () => {
 
 }
+
