@@ -35,7 +35,7 @@ export type StoreType = {
     updateNewPostText: (newPostText: string) => void,
     addNewMessage: () => void,
     updateMessageText: (newMessageText: string) => void,
-    getState: () => void
+    getState: () => RootStateType
 }
 
 export const store: StoreType = {
