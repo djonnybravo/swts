@@ -2,18 +2,15 @@ import React, {ChangeEvent} from 'react';
 import classes from "./MyPosts.module.css";
 import Post from "./Post/Post";
 import {ProfilePropsType} from "../Profile";
+import {AddPostAC, UpdateNewPostTextAC} from "../../../redux/store";
 
 const   MyPosts = (props:ProfilePropsType) => {
     //let newPostElement = React.createRef<HTMLTextAreaElement>()
-    let addPost = () => props.dispatch({type: "ADD-POST"})
+    let addPost = () =>   props.dispatch(AddPostAC())
+
+    const onPostTextChange = (e:ChangeEvent<HTMLTextAreaElement>) => props.dispatch(UpdateNewPostTextAC(e.currentTarget.value))
 
 
-
-
-    const onPostTextChange = (e:ChangeEvent<HTMLTextAreaElement>) => {
-            let newPostText = e.currentTarget?.value
-            props.dispatch({type: "UPDATE-NEW-POST-TEXT", newPostText})
-    }
 
 
     return (
