@@ -34,7 +34,7 @@ const   MyPosts = (props:ProfilePropsType) => {
                 <button onClick={addPost}>Add post</button>
             </div>
             <div className={classes.posts}>
-                {props.posts.map(post => <Post id={post.id} message={post.message} likes={post.likes}/>)}
+                {props.posts.map(post => <Post key={post.id} id={post.id} message={post.message} likes={post.likes}/>)}
 
             </div>
         </div>
