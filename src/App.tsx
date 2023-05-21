@@ -28,9 +28,8 @@ function App(props: AppPropsTye) {
                            render={() =>
                                <Profile
                                    posts={props.store._state.profilePage.posts}
-                                   addPost={props.store.addPost.bind(props.store)}
                                    newPostText={props.store._state.profilePage.newPostText}
-                                   updateNewPostText={props.store.updateNewPostText.bind(props.store)}
+                                   dispatch={props.store.dispatch.bind(props.store)}
                                />}></Route>
                     <Route path={"/dialogs"} render={() =>
                         <Dialogs
