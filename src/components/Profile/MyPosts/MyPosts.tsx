@@ -5,13 +5,14 @@ import {ProfilePropsType} from "../Profile";
 
 const   MyPosts = (props:ProfilePropsType) => {
     //let newPostElement = React.createRef<HTMLTextAreaElement>()
-    let addPost = () => props.addPost()
+    let addPost = () => props.dispatch({type: "ADD-POST"})
 
 
 
 
     const onPostTextChange = (e:ChangeEvent<HTMLTextAreaElement>) => {
-            props.updateNewPostText(e.currentTarget?.value)
+            let newPostText = e.currentTarget?.value
+            props.dispatch({type: "UPDATE-NEW-POST-TEXT", newPostText})
     }
 
 
