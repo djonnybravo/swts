@@ -29,12 +29,13 @@ export type RootStateType = {
 
 export type StoreType = {
     _state: RootStateType,
-    rerenderEntireTree: () => void,
+    _rerenderEntireTree: () => void,
     subscribe: (observer: () => void) => void,
     addPost: () => void,
     updateNewPostText: (newPostText: string) => void,
     addNewMessage: () => void,
     updateMessageText: (newMessageText: string) => void,
+    getState: () => void
 }
 
 export const store: StoreType = {
@@ -67,12 +68,13 @@ export const store: StoreType = {
             newMessageText: ""
         }
     },
-    rerenderEntireTree() {
+    _rerenderEntireTree() {
     },
-    subscribe (observer: () => void)  {
-        this.rerenderEntireTree = observer
+    subscribe(observer: () => void)  {
+        this._rerenderEntireTree = observer
     },
     addPost() {
+
         let newPost: PostsType = {
             id: new Date().getTime(),
             message: this._state.profilePage.newPostText,
@@ -80,24 +82,27 @@ export const store: StoreType = {
         }
         this._state.profilePage.posts.push(newPost)
         this._state.profilePage.newPostText = ""
-        this.rerenderEntireTree()
+        this._rerenderEntireTree()
 
     },
-    updateNewPostText (newPostText: string)  {
+    updateNewPostText(newPostText: string)  {
         this._state.profilePage.newPostText = newPostText
-        this.rerenderEntireTree()
+        this._rerenderEntireTree()
     },
-    addNewMessage  ()  {
+    addNewMessage()  {
         let newMessage: MessageType = {
             id: new Date().getTime(),
             message: this._state.dialogsPage.newMessageText
         }
         this._state.dialogsPage.messages.push(newMessage)
         this._state.dialogsPage.newMessageText = ""
-        this.rerenderEntireTree()
+        this._rerenderEntireTree()
     },
-    updateMessageText  (newMessageText: string)  {
+    updateMessageText(newMessageText: string)  {
         this._state.dialogsPage.newMessageText = newMessageText
-        this.rerenderEntireTree()
+        this._rerenderEntireTree()
+    },
+    getState() {
+        return this._state
     }
 }
