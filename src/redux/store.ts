@@ -28,8 +28,14 @@ export type RootStateType = {
 }
 
 
-type ActionType = {
-    type: string
+export type ActionType = AddPostActionType | UpdateNewPostTextActionType
+
+export type AddPostActionType = {
+    type: "ADD-POST"
+}
+
+export type UpdateNewPostTextActionType = {
+    type: "UPDATE-NEW-POST-TEXT",
     newPostText: string
 }
 
@@ -42,7 +48,7 @@ export type StoreType = {
     addNewMessage: () => void
     updateMessageText: (newMessageText: string) => void
     getState: () => RootStateType
-    dispatch: (action: ActionType) => void
+    dispatch: (action:AddPostActionType | UpdateNewPostTextActionType) => void
 }
 
 export const store: StoreType = {
