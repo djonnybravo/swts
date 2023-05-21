@@ -8,7 +8,8 @@ import Dialogs from "./components/Dialogs/Dialogs";
 import MusicPage from "./components/Music/MusicPage";
 import NewsPage from "./components/News/NewsPage";
 import SettingsPage from "./components/Settings/SettingsPage";
-import {addNewMessage, addPost, state, updateMessageText, updateNewPostText} from "./redux/state";
+import {store} from "./redux/store";
+
 
 
 
@@ -24,18 +25,18 @@ function App() {
                     <Route path={"/profile"}
                            render={() =>
                                <Profile
-                                   posts={state.profilePage.posts}
-                                   addPost={addPost}
-                                   newPostText={state.profilePage.newPostText}
-                                   updateNewPostText={updateNewPostText}
+                                   posts={store._state.profilePage.posts}
+                                   addPost={store.addPost.bind(store)}
+                                   newPostText={store._state.profilePage.newPostText}
+                                   updateNewPostText={store.updateNewPostText.bind(store)}
                                />}></Route>
                     <Route path={"/dialogs"} render={() =>
                         <Dialogs
-                            dialogs={state.dialogsPage.dialogs}
-                            messages={state.dialogsPage.messages}
-                            newMessageText={state.dialogsPage.newMessageText}
-                            updateMessageText={updateMessageText}
-                            addNewMessage={addNewMessage}
+                            dialogs={store._state.dialogsPage.dialogs}
+                            messages={store._state.dialogsPage.messages}
+                            newMessageText={store._state.dialogsPage.newMessageText}
+                            updateMessageText={store.updateMessageText.bind(store)}
+                            addNewMessage={store.addNewMessage.bind(store)}
                         />}></Route>
 
                     <Route path={"/music"} render={() => <MusicPage/>}></Route>
