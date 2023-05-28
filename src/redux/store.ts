@@ -28,16 +28,22 @@ export type RootStateType = {
 }
 
 
-export type ActionType = AddPostActionType | UpdateNewPostTextActionType
-
+export type ActionType = AddPostActionType | UpdateNewPostTextActionType | UpdateNewMessageTextActionType | AddMessageActionType
 export type AddPostActionType = {
     type: "ADD-POST"
 }
-
 export type UpdateNewPostTextActionType = {
     type: "UPDATE-NEW-POST-TEXT",
     newPostText: string
 }
+export type AddMessageActionType = {
+    type: "ADD-MESSAGE"
+}
+export type UpdateNewMessageTextActionType = {
+    type: "UPDATE-NEW-MESSAGE-TEXT",
+    newMessageText: string
+}
+
 
 export type StoreType = {
     _state: RootStateType
@@ -48,7 +54,7 @@ export type StoreType = {
     addNewMessage: () => void
     updateMessageText: (newMessageText: string) => void
     getState: () => RootStateType
-    dispatch: (action:AddPostActionType | UpdateNewPostTextActionType) => void
+    dispatch: (action: AddPostActionType | UpdateNewPostTextActionType | UpdateNewMessageTextActionType | AddMessageActionType) => void
 }
 
 export const store: StoreType = {
@@ -83,7 +89,7 @@ export const store: StoreType = {
     },
     _rerenderEntireTree() {
     },
-    subscribe(observer: () => void)  {
+    subscribe(observer: () => void) {
         this._rerenderEntireTree = observer
     },
     addPost() {
@@ -98,11 +104,11 @@ export const store: StoreType = {
         this._rerenderEntireTree()
 
     },
-    updateNewPostText(newPostText: string)  {
+    updateNewPostText(newPostText: string) {
         this._state.profilePage.newPostText = newPostText
         this._rerenderEntireTree()
     },
-    addNewMessage()  {
+    addNewMessage() {
         let newMessage: MessageType = {
             id: new Date().getTime(),
             message: this._state.dialogsPage.newMessageText
@@ -111,7 +117,7 @@ export const store: StoreType = {
         this._state.dialogsPage.newMessageText = ""
         this._rerenderEntireTree()
     },
-    updateMessageText(newMessageText: string)  {
+    updateMessageText(newMessageText: string) {
         this._state.dialogsPage.newMessageText = newMessageText
         this._rerenderEntireTree()
     },
@@ -120,23 +126,35 @@ export const store: StoreType = {
     },
     dispatch(action) {
 
-       if (action.type === "ADD-POST") {
-           let newPost: PostsType = {
-               id: new Date().getTime(),
-               message: this._state.profilePage.newPostText,
-               likes: 5,
-           }
-           this._state.profilePage.posts.push(newPost)
-           this._state.profilePage.newPostText = ""
-           this._rerenderEntireTree()
-       } else if (action.type === "UPDATE-NEW-POST-TEXT") {
-           this._state.profilePage.newPostText = action.newPostText
-           this._rerenderEntireTree()
-       }
-
+        if (action.type === "ADD-POST") {
+            let newPost: PostsType = {
+                id: new Date().getTime(),
+                message: this._state.profilePage.newPostText,
+                likes: 5,
+            }
+            this._state.profilePage.posts.push(newPost)
+            this._state.profilePage.newPostText = ""
+            this._rerenderEntireTree()
+        } else if (action.type === "UPDATE-NEW-POST-TEXT") {
+            this._state.profilePage.newPostText = action.newPostText
+            this._rerenderEntireTree()
+        } else if (action.type === "UPDATE-NEW-MESSAGE-TEXT") {
+            this._state.dialogsPage.newMessageText = action.newMessageText
+            this._rerenderEntireTree()
+        } else if (action.type === "ADD-MESSAGE") {
+            let newMessage: MessageType = {
+                id: new Date().getTime(),
+                message: this._state.dialogsPage.newMessageText
+            }
+            this._state.dialogsPage.messages.push(newMessage)
+            this._state.dialogsPage.newMessageText = ""
+            this._rerenderEntireTree()
+        }
     }
 }
 
 export const AddPostAC = ():AddPostActionType => { return {type: "ADD-POST"}}
 export const UpdateNewPostTextAC = (newPostText: string ):UpdateNewPostTextActionType => { return {type: "UPDATE-NEW-POST-TEXT", newPostText: newPostText}}
+export const AddMessageAC = ():AddMessageActionType => { return {type: "ADD-MESSAGE"}}
+export const UpdateNewMessageTextAC = (newMessageText: string ):UpdateNewMessageTextActionType => { return {type: "UPDATE-NEW-MESSAGE-TEXT", newMessageText: newMessageText}}
 
