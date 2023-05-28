@@ -129,11 +129,11 @@ export const store: StoreType = {
         return this._state
     },
     dispatch(action) {
-        profilePageReducer(this._state, action)
-        profilePageReducer(this._state, action)
-        dialogsPageReducer(this._state, action)
-        dialogsPageReducer(this._state, action)
-        this._rerenderEntireTree()
+        // profilePageReducer(this._state, action)
+        // profilePageReducer(this._state, action)
+        // dialogsPageReducer(this._state, action)
+        // dialogsPageReducer(this._state, action)
+        // this._rerenderEntireTree()
     }
 }
 

@@ -3,13 +3,14 @@ import classes from "./MyPosts.module.css";
 import Post from "./Post/Post";
 import {ProfilePropsType} from "../Profile";
 import {AddPostAC, UpdateNewPostTextAC} from "../../../redux/profilePageReducer";
+import {store} from "../../../redux/redux-store";
 
 
 const   MyPosts = (props:ProfilePropsType) => {
     //let newPostElement = React.createRef<HTMLTextAreaElement>()
-    let addPost = () =>   props.dispatch(AddPostAC())
+    let addPost = () =>   store.dispatch(AddPostAC())
 
-    const onPostTextChange = (e:ChangeEvent<HTMLTextAreaElement>) => props.dispatch(UpdateNewPostTextAC(e.currentTarget.value))
+    const onPostTextChange = (e:ChangeEvent<HTMLTextAreaElement>) => store.dispatch(UpdateNewPostTextAC(e.currentTarget.value))
 
 
 

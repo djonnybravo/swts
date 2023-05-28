@@ -1,24 +1,42 @@
 import {ActionType, AddPostActionType, PostsType, RootStateType, UpdateNewPostTextActionType} from "./store";
 
 
-const profilePageReducer = (state:RootStateType, action: ActionType ) => {
+export type InitStateType = {
+    posts: Array<PostsType>,
+    newPostText: string,
+
+}
+
+let initState: InitStateType = {
+
+        posts: [
+            {id: 1, message: "Hey, hello, how are you", likes: 10},
+            {id: 2, message: "hello, i am good, and you", likes: 10},
+            {id: 3, message: "I am good too, thanks", likes: 10},
+            {id: 4, message: "This is great", likes: 10},
+        ],
+        newPostText: ""
+}
+
+
+const profilePageReducer = (state = initState, action: ActionType ) => {
 
         switch (action.type) {
             case "ADD-POST": {
 
                 let newPost: PostsType = {
                     id: new Date().getTime(),
-                    message: state.profilePage.newPostText,
+                    message: state.newPostText,
                     likes: 5,
                 }
-                state.profilePage.posts.push(newPost)
-                state.profilePage.newPostText = ""
+                state.posts.push(newPost)
+                state.newPostText = ""
 
 
                 return state
             }
             case "UPDATE-NEW-POST-TEXT": {
-                state.profilePage.newPostText = action.newPostText
+                state.newPostText = action.newPostText
 
                 return state
             }
