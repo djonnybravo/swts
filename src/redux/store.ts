@@ -1,3 +1,7 @@
+import profilePageReducer from "./profilePageReducer";
+import dialogsPageReducer from "./dialogsPageReducer";
+
+
 export type PostsType = {
     id: number
     message: string
@@ -125,31 +129,11 @@ export const store: StoreType = {
         return this._state
     },
     dispatch(action) {
-
-        if (action.type === "ADD-POST") {
-            let newPost: PostsType = {
-                id: new Date().getTime(),
-                message: this._state.profilePage.newPostText,
-                likes: 5,
-            }
-            this._state.profilePage.posts.push(newPost)
-            this._state.profilePage.newPostText = ""
-            this._rerenderEntireTree()
-        } else if (action.type === "UPDATE-NEW-POST-TEXT") {
-            this._state.profilePage.newPostText = action.newPostText
-            this._rerenderEntireTree()
-        } else if (action.type === "UPDATE-NEW-MESSAGE-TEXT") {
-            this._state.dialogsPage.newMessageText = action.newMessageText
-            this._rerenderEntireTree()
-        } else if (action.type === "ADD-MESSAGE") {
-            let newMessage: MessageType = {
-                id: new Date().getTime(),
-                message: this._state.dialogsPage.newMessageText
-            }
-            this._state.dialogsPage.messages.push(newMessage)
-            this._state.dialogsPage.newMessageText = ""
-            this._rerenderEntireTree()
-        }
+        profilePageReducer(this._state, action)
+        profilePageReducer(this._state, action)
+        dialogsPageReducer(this._state, action)
+        dialogsPageReducer(this._state, action)
+        this._rerenderEntireTree()
     }
 }
 
