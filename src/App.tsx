@@ -36,8 +36,7 @@ function App(props: AppPropsTye) {
                             dialogs={props.store._state.dialogsPage.dialogs}
                             messages={props.store._state.dialogsPage.messages}
                             newMessageText={props.store._state.dialogsPage.newMessageText}
-                            updateMessageText={props.store.updateMessageText.bind(props.store)}
-                            addNewMessage={props.store.addNewMessage.bind(props.store)}
+                            dispatch={props.store.dispatch.bind(props.store)}
                         />}></Route>
 
                     <Route path={"/music"} render={() => <MusicPage/>}></Route>
