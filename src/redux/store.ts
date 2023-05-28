@@ -137,8 +137,3 @@ export const store: StoreType = {
     }
 }
 
-export const AddPostAC = ():AddPostActionType => { return {type: "ADD-POST"}}
-export const UpdateNewPostTextAC = (newPostText: string ):UpdateNewPostTextActionType => { return {type: "UPDATE-NEW-POST-TEXT", newPostText: newPostText}}
-export const AddMessageAC = ():AddMessageActionType => { return {type: "ADD-MESSAGE"}}
-export const UpdateNewMessageTextAC = (newMessageText: string ):UpdateNewMessageTextActionType => { return {type: "UPDATE-NEW-MESSAGE-TEXT", newMessageText: newMessageText}}
-

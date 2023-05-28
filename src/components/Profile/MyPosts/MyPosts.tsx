@@ -2,7 +2,8 @@ import React, {ChangeEvent} from 'react';
 import classes from "./MyPosts.module.css";
 import Post from "./Post/Post";
 import {ProfilePropsType} from "../Profile";
-import {AddPostAC, UpdateNewPostTextAC} from "../../../redux/store";
+import {AddPostAC, UpdateNewPostTextAC} from "../../../redux/profilePageReducer";
+
 
 const   MyPosts = (props:ProfilePropsType) => {
     //let newPostElement = React.createRef<HTMLTextAreaElement>()

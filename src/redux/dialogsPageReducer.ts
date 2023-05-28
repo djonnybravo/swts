@@ -29,5 +29,6 @@ const dialogsPageReducer = (state: RootStateType, action: ActionType) => {
 
 }
 
-
+export const AddMessageAC = ():AddMessageActionType => { return {type: "ADD-MESSAGE"}}
+export const UpdateNewMessageTextAC = (newMessageText: string ):UpdateNewMessageTextActionType => { return {type: "UPDATE-NEW-MESSAGE-TEXT", newMessageText: newMessageText}}
 export default dialogsPageReducer
