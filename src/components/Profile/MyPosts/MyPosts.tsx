@@ -6,7 +6,11 @@ import {AddPostAC, UpdateNewPostTextAC} from "../../../redux/profilePageReducer"
 import {store} from "../../../redux/redux-store";
 
 
-const   MyPosts = (props:ProfilePropsType) => {
+
+
+
+
+const MyPosts = (props:ProfilePropsType) => {
     //let newPostElement = React.createRef<HTMLTextAreaElement>()
     let addPost = () =>   store.dispatch(AddPostAC())
 

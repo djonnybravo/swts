@@ -4,7 +4,10 @@ import App from "./App";
 import {RootState, store} from "./redux/redux-store";
 
 
+const StoreContext = React.createContext(null)
 
+StoreContext.Provider
+StoreContext.Consumer
 
 
 let rerenderEntireTree = (state: RootState) => {
