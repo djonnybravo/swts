@@ -13,7 +13,7 @@ let initState: InitStateType = {
             {id: 1, message: "Hey, hello, how are you", likes: 10},
             {id: 2, message: "hello, i am good, and you", likes: 10},
             {id: 3, message: "I am good too, thanks", likes: 10},
-            {id: 4, message: "This is great", likes: 10},
+            {id: 4, message: "This is great, wow!", likes: 10},
         ],
         newPostText: ""
 }
